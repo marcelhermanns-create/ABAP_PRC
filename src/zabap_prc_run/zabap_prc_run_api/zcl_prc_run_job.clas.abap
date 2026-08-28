@@ -18,8 +18,8 @@ CLASS zcl_prc_run_job DEFINITION
     DATA mv_message_status   TYPE int8 VALUE 0.
     DATA mv_message_text     TYPE string.
 
-    DATA mv_current_run_uuid TYPE zr1_run-uuid.
-    DATA mv_execution_type   TYPE zr1_run_execution_type.
+    DATA mv_current_run_uuid TYPE zprc_run-uuid.
+    DATA mv_execution_type   TYPE zprc_run_execution_type.
 
     TYPES: BEGIN OF ty_select_options,
              selname TYPE c LENGTH 8,

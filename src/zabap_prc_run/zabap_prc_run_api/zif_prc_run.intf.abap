@@ -11,8 +11,8 @@ INTERFACE zif_prc_run
              END OF co_job_TEMPLATE_NAMES.
 
   CONSTANTS: BEGIN OF co_application_names,
-               contract_billing TYPE zr1_run_app_name VALUE 'Contract Billing',
-               rate_adjustment  TYPE zr1_run_app_name VALUE 'Rate Adjustment',
+               contract_billing TYPE zprc_run_app_name VALUE 'Contract Billing',
+               rate_adjustment  TYPE zprc_run_app_name VALUE 'Rate Adjustment',
              END OF co_application_names.
 
   CONSTANTS: BEGIN OF co_message_severity,
