@@ -14,7 +14,7 @@ authorization master ( instance )
 
   static action adjustViaSelectOptions parameter ZA_PRC_DEMO_AdjustParamSelOpt result [1] ZA_PRC_RunActionResponse { default function GetDefaultsForAdjSelOpt; }
 
-  mapping for zr0_srv_ctr
+  mapping for zprc_demo_srvctr
     {
       UUID               = UUID;
       Description        = description;
@@ -32,7 +32,7 @@ authorization master ( instance )
 }
 
 define behavior for ZR_PRC_DEMO_ServiceContractItm alias ServiceContractItem
-persistent table zr0_srv_ctr_item
+persistent table zprc_demo_sc_itm
 lock dependent by _ServiceContract
 authorization dependent by _ServiceContract
 {
@@ -42,7 +42,7 @@ authorization dependent by _ServiceContract
   field ( readonly ) ParentUUID;
 
   association _ServiceContract;
-  mapping for zr0_srv_ctr_item
+  mapping for zprc_demo_sc_itm
     {
       UUID            = UUID;
       ParentUUID      = parent_uuid;

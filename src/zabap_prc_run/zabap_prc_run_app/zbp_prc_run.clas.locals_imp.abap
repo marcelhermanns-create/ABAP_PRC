@@ -38,7 +38,7 @@ CLASS lhc_Run IMPLEMENTATION.
     APPEND VALUE #( %cid = keys[ 1 ]-%param-jobName
                     uuid = ls_mapped-run[ 1 ]-uuid ) TO mapped-run.
 
-    APPEND VALUE #( name    = zif_r1_run=>co_parameter-p_uuid
+    APPEND VALUE #( name    = zif_prc_run=>co_parameter-p_uuid
                     t_value = VALUE #( ( low = ls_mapped-run[ 1 ]-uuid sign = 'I' option = 'EQ' ) ) ) TO lt_parameter.
 
     APPEND VALUE #( job_template_name = keys[ 1 ]-%param-jobTemplateName

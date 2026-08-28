@@ -19,7 +19,7 @@ annotate view ZC_PRC_DEMO_ServiceContractItm with
 
   @Consumption.valueHelpDefinition: [{
       entity: {
-          name: 'ZR_R0_Material',
+          name: 'ZR_PRC_DEMO_Material',
           element: 'Identifier'
       }
   }]

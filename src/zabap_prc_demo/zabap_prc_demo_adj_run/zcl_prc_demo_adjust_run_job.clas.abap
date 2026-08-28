@@ -24,7 +24,7 @@ CLASS zcl_prc_demo_adjust_run_job DEFINITION
     METHODS get_application_name REDEFINITION.
 
   PRIVATE SECTION.
-    DATA mt_contract_items_to_process TYPE STANDARD TABLE OF ZI_R1_ServiceContractItemSel WITH DEFAULT KEY.
+    DATA mt_contract_items_to_process TYPE STANDARD TABLE OF ZI_PRC_Demo_SrvCtrItemSel WITH DEFAULT KEY.
 
     METHODS do_actual_processing RAISING cx_bali_runtime.
     METHODS _get_data.
@@ -86,8 +86,8 @@ CLASS zcl_prc_demo_adjust_run_job IMPLEMENTATION.
 
   METHOD do_actual_processing.
     TYPES: BEGIN OF ty_id_and_uuid,
-             id   TYPE zi_r1_servicecontractitemsel-ServiceContractID,
-             uuid TYPE zi_r1_servicecontractitemsel-ContractUUID,
+             id   TYPE ZI_PRC_Demo_SrvCtrItemSel-ServiceContractID,
+             uuid TYPE ZI_PRC_Demo_SrvCtrItemSel-ContractUUID,
            END OF ty_id_and_uuid,
            tt_contract_ids TYPE SORTED TABLE OF ty_id_and_uuid WITH UNIQUE KEY uuid.
     DATA lt_contract_ids TYPE tt_contract_ids.
