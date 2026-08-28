@@ -1,0 +1,21 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Retry Job",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "className": "ZCL_PRC_RETRY_JOB"
+  },
+  "parameters": [
+    {
+      "name": "S_UUID",
+      "readOnly": true
+    },
+    {
+      "name": "S_IGNR",
+      "readOnly": true
+    }
+  ]
+}

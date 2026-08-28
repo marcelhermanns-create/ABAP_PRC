@@ -1,0 +1,29 @@
+@Metadata.layer: #CUSTOMER
+@Search.searchable: true
+@UI.headerInfo: {
+    typeName: 'EquipmentNew',
+    typeNamePlural: 'Equipment',
+    title: {
+        type: #STANDARD,
+        value: 'Identifier'
+    },
+    description: {
+        type: #STANDARD,
+        value: 'EquipmentCategory'
+    }
+}
+
+annotate entity ZC_PRC_DEMO_Equipment with
+{
+  @EndUserText.label: 'Identifier'
+  @Search.defaultSearchElement: true
+  @UI.lineItem: [{ position: 10 }]
+  @UI.selectionField: [{ position: 10 }]
+  Identifier;
+
+  @EndUserText.label: 'Category'
+  @Search.defaultSearchElement: true
+  @UI.lineItem: [{ position: 20 }]
+  @UI.selectionField: [{ position: 20 }]
+  EquipmentCategory;
+}

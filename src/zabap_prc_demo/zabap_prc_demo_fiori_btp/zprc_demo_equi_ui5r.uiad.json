@@ -1,0 +1,34 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Equipment",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Equipment"
+  },
+  "ui5AppDetails": {
+    "appId": "zprc_demo_equi"
+  },
+  "navigation": {
+    "targetMappingId": "ZPRC_DEMO_EQUI_UI5R_TM",
+    "semanticObject": "Equipment",
+    "action": "show",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "ZPRC_DEMO_EQUI_UI5R_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Equipment"
+      }
+    }
+  ]
+}

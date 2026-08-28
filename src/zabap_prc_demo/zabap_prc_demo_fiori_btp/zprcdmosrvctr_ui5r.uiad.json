@@ -1,0 +1,35 @@
+{
+  "formatVersion": "2",
+  "header": {
+    "description": "Service Contract Fiori app",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD",
+    "targetMappingTitle": "Service Contracts"
+  },
+  "ui5AppDetails": {
+    "appId": "zabap.prc.demo.srvctr"
+  },
+  "navigation": {
+    "targetMappingId": "ZPRCDMOSRVCTR_UI5R_TM",
+    "semanticObject": "ServiceContract",
+    "action": "display",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "ZPRCDMOSRVCTR_UI5R_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Service Contracts",
+        "subtitle": "Mass Rate Adjustment"
+      }
+    }
+  ]
+}

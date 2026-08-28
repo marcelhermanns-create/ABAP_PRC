@@ -1,0 +1,7 @@
+@EndUserText.label: 'Service def ZC_PRC_PROCESSINSTANCE'
+define service ZUI_PRC_PROCESSED_OBJECT_O4 {
+  expose ZC_PRC_ProcessedObject     as ProcessedObject;
+  expose ZC_PRC_ProcessedStep       as ProcessedStep;
+  expose ZI_PRC_MessageSeverityVH;
+  expose ZI_PRC_ProcessedObjectAggr;
+}

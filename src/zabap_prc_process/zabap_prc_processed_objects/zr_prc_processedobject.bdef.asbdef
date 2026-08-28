@@ -1,0 +1,98 @@
+managed implementation in class ZBP_PRC_PROCESSED_OBJECT unique;
+strict ( 2 );
+
+define behavior for ZR_PRC_ProcessedObject alias ProcessedObject
+persistent table zprc_proc_object
+etag master LocalLastChangedAt
+lock master
+authorization master ( global )
+with additional save
+
+{
+  field ( readonly, numbering : managed ) UUID;
+
+  field ( readonly )
+  CreatedAt,
+  CreatedBy,
+  LastChangedAt,
+  LastChangedBy,
+  LocalLastChangedAt;
+
+  internal create;
+  update;
+  delete;
+
+  event objectProcessedTransition for side effects;
+
+  action ( features : instance ) resumeProcessing;// result [1] $self;
+
+  side effects
+  { action resumeProcessing affects $self;
+    event objectProcessedTransition affects $self; }
+
+  static factory action createProcessedObject parameter ZA_PRC_CreateProcessedObject [1];
+
+  determination determineStepTotal on save { field state; }
+
+  association _ProcessedStep { create; }
+
+  mapping for zprc_proc_object
+    {
+      UUID                        = uuid;
+      LatestStepUUID              = latest_step_uuid;
+      runUUID                     = run_uuid;
+      AppName                     = app_name;
+      MailAddress                 = mail_address;
+      FactoryClassName            = factory_class_name;
+      State                       = state;
+      StepTotal                   = step_total;
+      DoNotProcessBefore          = do_not_process_before;
+      QueueID                     = queue_id;
+      QueuePosition               = queue_pos;
+      ExternalProcessedObjectID   = ext_processed_object_id;
+      ExternalProcessedObjectUUID = ext_processed_object_uuid;
+      retryCount                  = retry_count;
+      retryDateTime               = retry_datetime;
+      CreatedBy                   = created_by;
+      CreatedAt                   = created_at;
+      LastChangedAt               = last_changed_at;
+      LastChangedBy               = last_changed_by;
+      LocalLastChangedAt          = local_last_changed_at;
+    }
+}
+
+define behavior for ZR_PRC_ProcessedStep alias ProcessedStep
+persistent table zprc_proc_step
+lock dependent
+authorization dependent
+with additional save
+{
+
+  field ( readonly, numbering : managed ) StepUUID;
+  field ( readonly ) ProcessedObjectUUID;
+  update;
+  delete;
+  association _ProcessedObject;
+
+  determination messageSeverityCode on save { field MessageSeverity; }
+
+  mapping for zprc_proc_step
+    {
+      StepUUID            = step_uuid;
+      ProcessedObjectUUID = processed_object_uuid;
+      StartState          = start_state;
+      EndState            = end_state;
+      MessageText         = message_text;
+      MessageClass        = msgid;
+      MessageNumber       = msgno;
+      MessageSeverity     = msgty;
+      MessageVariable1    = msgv1;
+      MessageVariable2    = msgv2;
+      MessageVariable3    = msgv3;
+      MessageVariable4    = msgv4;
+      MessageSeverityCode = message_severity_code;
+      CreatedBy           = created_by;
+      CreatedAt           = created_at;
+    }
+
+}
