@@ -1,6 +1,5 @@
 managed implementation in class zbp_prc_run unique;
 strict ( 2 );
-auxiliary class zcl_r1_run_job;
 
 define behavior for ZR_PRC_Run alias Run
 persistent table zprc_run
