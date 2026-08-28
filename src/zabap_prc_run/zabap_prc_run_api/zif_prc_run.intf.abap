@@ -24,9 +24,9 @@ INTERFACE zif_prc_run
              END OF co_message_Severity.
 
   CONSTANTS: BEGIN OF co_execution_status,
-               Started  TYPE zr1_run_execution_status VALUE 'ST',
-               planned  TYPE zr1_run_execution_status VALUE 'PL',
-               finished TYPE zr1_run_execution_status VALUE 'FI',
+               Started  TYPE zprc_run_execution_status VALUE 'ST',
+               planned  TYPE zprc_run_execution_status VALUE 'PL',
+               finished TYPE zprc_run_execution_status VALUE 'FI',
              END OF co_execution_status.
 
   CONSTANTS: BEGIN OF co_parameter,
